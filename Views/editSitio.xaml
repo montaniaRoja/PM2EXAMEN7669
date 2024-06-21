@@ -4,7 +4,7 @@
              x:Class="PM2EXAMEN7669.Views.editSitio"
              xmlns:convert="clr-namespace:PM2EXAMEN7669.Controllers"
     Title=""
-    BackgroundImageSource="background3.jpg">
+    BackgroundColor="White">
     <ContentPage.Resources>
         <convert:base64Image x:Key="BaseArray" />
     </ContentPage.Resources>
@@ -20,150 +20,149 @@
         <!--  Header  -->
         <Frame
             Grid.Row="0"
-            Margin="0,0,0,15"
+            Margin="10,0,10,15"
             Padding="0,10,0,10"
-            BackgroundColor="Black"
+            HeightRequest="70"
+            BackgroundColor="White"
             BorderColor="{DynamicResource TealPrimary}"
-            CornerRadius="20">
+            CornerRadius="5">
             <StackLayout
                 Margin="0,0,0,0"
                 Padding="0,0,0,0"
-                BackgroundColor="Transparent"
+                BackgroundColor="White"
                 Orientation="Horizontal">
-                <Button
-                    x:Name="btnRegresar"
-                    Margin="20,0,0,0"
-                    BackgroundColor="{DynamicResource TealPrimary}"
-                    Clicked="btnRegresar_Clicked"
-                    CornerRadius="20"
-                    FontSize="12"
-                    HeightRequest="40"
-                    Text="Atras"
-                    TextColor="White"
-                    WidthRequest="90" />
+                
                 <!--  Spacer  -->
-                <BoxView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" />
+                <BoxView BackgroundColor="White" HorizontalOptions="FillAndExpand"
+                         Margin="10,0,10,0"/>
                 <Label
-                    Margin="0,0,30,0"
+                    Margin="5,5,100,0"
+                    FontSize="18"
                     FontAttributes="Bold"
+                    HeightRequest="30"
                     Text="ACTUALIZAR SITIO"
-                    TextColor="White"
+                    TextColor="Black"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
         </Frame>
+        <StackLayout Grid.Row="1" Orientation="Vertical"
+             HeightRequest="570">
 
-
-        <ScrollView Grid.Row="1">
-            <StackLayout>
-                <Frame
+            <ScrollView Grid.Row="1">
+                <StackLayout>
+                    <Frame
                     x:Name="frameDetalle"
                     Margin="5"
                     Padding="0"
-                    BackgroundColor="{DynamicResource BlackWithTransparency}"
-                    BorderColor="{DynamicResource TealPrimary}"
-                    CornerRadius="10"
+                    CornerRadius="5"
                     HasShadow="True"
                     VerticalOptions="CenterAndExpand">
-                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-
-                        <Label
+                            <Label
                             Margin="0,5,0,10"
                             FontAttributes="Bold"
                             FontSize="20"
                             HorizontalTextAlignment="Center"
-                            Text="Imagen Sitio Visitado"
-                            TextColor="White" />
+                            Text="Fotografia"
+                            TextColor="Black" />
 
-                        <Image
+                            <Frame
+                                Padding="0"
+                                CornerRadius="10"
+                                BorderColor="Blue"
+                                HasShadow="True"
+                                HeightRequest="180"
+                                WidthRequest="200"
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand">
+                                <Image
                             x:Name="imgSitio"
-                            Margin="0,0,0,10"
+                            Margin="5,0,5,0"
                             Aspect="AspectFit"
-                            HeightRequest="200"
-                            HorizontalOptions="FillAndExpand"
+                            HeightRequest="180"
+                            HorizontalOptions="Fill"
                             Source="{Binding imagen, Converter={StaticResource BaseArray}}"
-                            VerticalOptions="CenterAndExpand"
+                            VerticalOptions="Fill"
                             WidthRequest="200" />
+                            </Frame>
 
-
-                        <Label
+                            <Label
                             Margin="0,0,0,5"
                             FontSize="16"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="Latitud"
-                            TextColor="White"
+                            TextColor="Black"
                             VerticalOptions="Start"
                             VerticalTextAlignment="Center" />
-                        <Label
+                            <Label
                             x:Name="labelLatitude"
                             Margin="0,0,0,10"
                             FontAttributes="Bold"
-                            FontSize="16"
+                            FontSize="24"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding latitud}"
-                            TextColor="{DynamicResource Accent}"
+                            TextColor="Black"
                             VerticalOptions="Start"
                             VerticalTextAlignment="Center" />
 
 
-                        <Label
+                            <Label
                             Margin="0,0,0,5"
                             FontSize="16"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="Longitud"
-                            TextColor="White"
+                            TextColor="Black"
                             VerticalOptions="Start"
                             VerticalTextAlignment="Center" />
 
-                        <Label
+                            <Label
                             x:Name="labelLongitude"
                             Margin="0,0,0,10"
                             FontAttributes="Bold"
-                            FontSize="16"
+                            FontSize="24"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="{Binding longitud}"
-                            TextColor="{DynamicResource Accent}"
+                            TextColor="Black"
                             VerticalOptions="Start"
                             VerticalTextAlignment="Center" />
 
-                        <Label
+                            <Label
                             Margin="0,0,0,5"
                             FontSize="16"
                             HorizontalOptions="Center"
                             HorizontalTextAlignment="Center"
                             Text="Descripción"
-                            TextColor="White"
+                            TextColor="Black"
                             VerticalOptions="Start"
                             VerticalTextAlignment="Center" />
 
-                        <Frame
-                            Margin="0,0,0,10"
-                            BackgroundColor="{DynamicResource BlackWithTransparency}"
-                            BorderColor="{DynamicResource TealPrimary}">
-                            <Editor
+                            
+                                <Entry
                                 x:Name="entryDescripcion"
                                 Margin="0,0,0,0"
-                                BackgroundColor="Transparent"
-                                FontSize="16"
+                                BackgroundColor="White"
+                                FontSize="24"
                                 HeightRequest="100"
                                 HorizontalOptions="FillAndExpand"
                                 HorizontalTextAlignment="Center"
                                 Placeholder="Descripción"
                                 Text="{Binding descripcion}"
-                                TextColor="{DynamicResource Accent}"
+                                TextColor="Black"
                                 VerticalOptions="CenterAndExpand"
                                 VerticalTextAlignment="Center"
-                                WidthRequest="200" />
-                        </Frame>
+                                WidthRequest="300" />
+                            
 
-                    </StackLayout>
-                </Frame>
-            </StackLayout>
-        </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
 
         <!--  Botones inferiores  -->
         <Frame
@@ -172,7 +171,7 @@
             Padding="0,10,0,10"
             BackgroundColor="Black"
             BorderColor="{DynamicResource TealPrimary}"
-            CornerRadius="20">
+            CornerRadius="5">
             <StackLayout
                 Grid.Row="2"
                 Padding="0,0,0,0"
@@ -182,14 +181,14 @@
                 <Button
                     x:Name="btnActualizar"
                     Margin="10,0,10,0"
-                    BackgroundColor="{DynamicResource TealPrimary}"
                     Clicked="btnActualizar_Clicked"
-                    CornerRadius="20"
-                    FontSize="12"
+                    BackgroundColor="#3386ff"
+                    FontSize="18"
+                    FontAttributes="Bold"
                     HeightRequest="40"
                     HorizontalOptions="FillAndExpand"
                     SemanticProperties.Hint="Actualizar Sitio"
-                    Text="Agregar" />
+                    Text="Editar" />
             </StackLayout>
         </Frame>
 

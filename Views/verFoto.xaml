@@ -19,8 +19,7 @@
 
         <Frame
             Grid.Row="0"
-            Margin="0,0,0,15"
-            Padding="0,10,0,10"
+            Margin="5,5,5,5"
             BackgroundColor="White"
             BorderColor="{DynamicResource TealPrimary}"
             CornerRadius="5">
@@ -37,8 +36,9 @@
 
                     <Label
                         x:Name="labelSitio"
-                        Margin="0,0,30,0"
+                        Margin="10,5,120,5"
                         FontAttributes="Bold"
+                        FontSize="24"
                         Text="{Binding descripcion}"
                         TextColor="Black"
                         VerticalOptions="CenterAndExpand" />
@@ -57,7 +57,7 @@
                 <StackLayout>
                     <Image
                         x:Name="imgSitio"
-                        Margin="0,0,0,10"
+                        Margin="0,-50,0,10"
                         Aspect="AspectFill"
                         HorizontalOptions="FillAndExpand"
                         Source="{Binding imagen, Converter={StaticResource BaseArray}}"
@@ -65,7 +65,7 @@
 
                     <Button
                         x:Name="btnSharePhoto"
-                        Margin="20,0,5,0"
+                        Margin="0,-20,20,50"
                         Clicked="btnSharePhoto_Clicked"
                         CommandParameter="{Binding .}"
                         CornerRadius="5"

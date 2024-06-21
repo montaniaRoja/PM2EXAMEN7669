@@ -35,19 +35,27 @@ namespace PM2EXAMEN7669.Views
                         Title = "Compartir Imagen",
                         File = new Xamarin.Essentials.ShareFile(localPath)
                     });
-
                 }
                 else if (imgSitio.Source is StreamImageSource streamImageSource)
                 {
                     var filePath = Path.Combine(Xamarin.Essentials.FileSystem.CacheDirectory, "shared_image.png");
 
-                    using (var stream = await streamImageSource.Stream(new System.Threading.CancellationToken()))
+                    using (var originalStream = await streamImageSource.Stream(new System.Threading.CancellationToken()))
                     {
-                        if (stream != null)
+                        if (originalStream != null)
                         {
-                            using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                            // Rewind the stream to the beginning
+                            originalStream.Seek(0, SeekOrigin.Begin);
+
+                            using (var memoryStream = new MemoryStream())
                             {
-                                await stream.CopyToAsync(fileStream);
+                                await originalStream.CopyToAsync(memoryStream);
+                                memoryStream.Seek(0, SeekOrigin.Begin);
+
+                                using (var fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                                {
+                                    await memoryStream.CopyToAsync(fileStream);
+                                }
                             }
 
                             await Xamarin.Essentials.Share.RequestAsync(new Xamarin.Essentials.ShareFileRequest
