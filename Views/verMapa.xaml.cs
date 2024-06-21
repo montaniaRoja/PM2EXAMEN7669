@@ -37,6 +37,7 @@ namespace PM2EXAMEN7669.Views
 
                 if (userLocation != null)
                 {
+                    mapa.IsShowingUser = true; // Asegúrate de que IsShowingUser esté habilitado
                     await colocarSitio(SelectedSitio.latitud, SelectedSitio.longitud);
                     MoveMapToRegion(SelectedSitio.latitud, SelectedSitio.longitud);
                 }

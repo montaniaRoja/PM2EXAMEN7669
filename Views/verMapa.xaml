@@ -62,7 +62,8 @@
                         x:Name="mapa"
                         Margin="0,0,0,0"
                         HeightRequest="450"
-                        IsShowingUser="True">
+                        IsShowingUser="True"
+                        MapType="Street">
                     <maps:Map.Pins>
                         <!--  Pins will be added dynamically in code-behind  -->
                     </maps:Map.Pins>
