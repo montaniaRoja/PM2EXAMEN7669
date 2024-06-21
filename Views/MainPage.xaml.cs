@@ -155,7 +155,7 @@ namespace PM2EXAMEN7669.Views;
 
     private void btnListaSitios_Clicked(object sender, EventArgs e)
     {
-       // Navigation.PushAsync(new Views.listaSitios());
+      Navigation.PushAsync(new Views.listaSitios());
     }
 
     private void btnSalir_Clicked(object sender, EventArgs e)

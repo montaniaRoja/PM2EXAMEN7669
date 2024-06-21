@@ -62,14 +62,31 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="GoogleMaps.LocationServices" Version="1.2.0.5" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.60" />
+		<PackageReference Include="Microsoft.Maui.Maps" Version="8.0.60" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+		<PackageReference Include="Syncfusion.Maui.Core" Version="26.1.38" />
+		<PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\editSitio.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\listaSitios.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\verFoto.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\verMapa.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="PM2EXAMEN7669.Views.verMapa"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
+    Title=""
+    BackgroundColor="White">
+    <Grid>
+        <!--  Content Grid  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Frame
+            Grid.Row="0"
+            Margin="5,5,5,50"
+            BackgroundColor="White"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="20">
+            <StackLayout Grid.Row="0">
+                <!--  Boton Regresar  -->
+                <StackLayout
+                    Grid.Row="0"
+                    Margin="0,0,0,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="White"
+                    Orientation="Horizontal">
+
+                    <BoxView BackgroundColor="White" 
+                             HorizontalOptions="Center" 
+                             HeightRequest="50"
+                             Margin="5,0,5,0"
+                             CornerRadius="5"/>
+
+                    <Label
+                        x:Name="labelSitio"
+                        Margin="0,0,30,0"
+                        Text=""
+                        TextColor="Black"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+
+        <!--  Body: Collection View  -->
+        <StackLayout Grid.Row="1" Orientation="Vertical"
+                     HeightRequest="550"
+                     Margin="0,30,5,60">
+
+            <Frame
+                           Grid.Row="0"
+                            Margin="5,10,5,10"
+                            BackgroundColor="White"
+                            HeightRequest="510"
+                            CornerRadius="20" >
+                <maps:Map
+                        x:Name="mapa"
+                        Margin="0,0,0,0"
+                        HeightRequest="450"
+                        IsShowingUser="True">
+                    <maps:Map.Pins>
+                        <!--  Pins will be added dynamically in code-behind  -->
+                    </maps:Map.Pins>
+                </maps:Map>
+            </Frame>
+
+        </StackLayout>
+
+        <Frame
+            Grid.Row="2"
+            Margin="5,10,5,10"
+            Padding="0,10,0,10"
+            BackgroundColor="White"
+            BorderColor="{DynamicResource TealPrimary}"
+            CornerRadius="5">
+            <StackLayout
+                Margin="0,0,0,0"
+                Padding="0,10,0,10"
+                HeightRequest="75"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="btnShare"
+                    Margin="10,0,10,0"
+                    Clicked="btnShare_Clicked"
+                    CornerRadius="5"
+                    BackgroundColor="#3386ff"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HeightRequest="40"
+                    TextColor="Black"
+                    Text="Compartir Sitio"
+                    HorizontalOptions="FillAndExpand"
+                    WidthRequest="300" />
+            </StackLayout>
+        </Frame>
+        <!--  Button for sharing  -->
+
+    </Grid>
+</ContentPage>
