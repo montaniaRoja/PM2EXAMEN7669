@@ -4,18 +4,18 @@ using System.Threading.Tasks;
 
 namespace PM2EXAMEN7669.Views
 {
-    public partial class listaSitios : ContentPage
+    public partial class PlacesList : ContentPage
     {
-        private Controllers.DBSitioMaps controller;
-        private List<Models.SitioMaps> sitios;
-        private Models.SitioMaps SelectedSitio { get; set; }
+        private Controllers.PlacesDB controller;
+        private List<Models.PlaceMaps> sitios;
+        private Models.PlaceMaps SelectedSitio { get; set; }
         private Grid selectedGrid = null;
 
-        public listaSitios()
+        public PlacesList()
         {
             NavigationPage.SetHasBackButton(this, false);
             InitializeComponent();
-            controller = new Controllers.DBSitioMaps();
+            controller = new Controllers.PlacesDB();
         }
 
         protected override async void OnAppearing()
@@ -63,7 +63,7 @@ namespace PM2EXAMEN7669.Views
         {
             if (SelectedSitio != null)
             {
-                await Navigation.PushAsync(new Views.editSitio(SelectedSitio));
+                await Navigation.PushAsync(new Views.EditPlace(SelectedSitio));
             }
         }
 
@@ -71,7 +71,7 @@ namespace PM2EXAMEN7669.Views
         {
             if (SelectedSitio != null)
             {
-                await Navigation.PushAsync(new Views.verMapa(SelectedSitio));
+                await Navigation.PushAsync(new Views.ShowMap(SelectedSitio));
             }
         }
 
@@ -83,7 +83,7 @@ namespace PM2EXAMEN7669.Views
             }
 
             selectedGrid = sender as Grid;
-            SelectedSitio = selectedGrid?.BindingContext as Models.SitioMaps;
+            SelectedSitio = selectedGrid?.BindingContext as Models.PlaceMaps;
 
             if (SelectedSitio != null)
             {
@@ -95,7 +95,7 @@ namespace PM2EXAMEN7669.Views
         {
             if (SelectedSitio != null)
             {
-                await Navigation.PushAsync(new Views.verFoto(SelectedSitio));
+                await Navigation.PushAsync(new Views.ShowPicture(SelectedSitio));
                 SelectedSitio = null;
             }
         }

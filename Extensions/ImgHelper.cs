@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace PM2EXAMEN7669.Extensions
 {
-    public static class PhotoHelper
+    public static class ImgHelper
     {
         public static byte[] GetImageArrayFromBase64(string base64String)
         {

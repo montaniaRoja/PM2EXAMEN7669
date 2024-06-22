@@ -2,17 +2,17 @@ namespace PM2EXAMEN7669.Views;
 
     public partial class MainPage : ContentPage
 {
-    Controllers.DBSitioMaps controller;
+    Controllers.PlacesDB controller;
     FileResult photo;
 
     public MainPage()
     {
         InitializeComponent();
-        controller = new Controllers.DBSitioMaps();
+        controller = new Controllers.PlacesDB();
         InitializePage();
     }
     
-    public MainPage(Controllers.DBSitioMaps dbPath)
+    public MainPage(Controllers.PlacesDB dbPath)
     {
         InitializeComponent();
         controller = dbPath;
@@ -116,7 +116,7 @@ namespace PM2EXAMEN7669.Views;
             return;
         }
         
-        var sitio = new Models.SitioMaps
+        var sitio = new Models.PlaceMaps
         {
             latitud = double.Parse(labelLatitude.Text),
             longitud = double.Parse(labelLongitude.Text),
@@ -155,7 +155,7 @@ namespace PM2EXAMEN7669.Views;
 
     private void btnListaSitios_Clicked(object sender, EventArgs e)
     {
-      Navigation.PushAsync(new Views.listaSitios());
+      Navigation.PushAsync(new Views.PlacesList());
     }
 
     private void btnSalir_Clicked(object sender, EventArgs e)

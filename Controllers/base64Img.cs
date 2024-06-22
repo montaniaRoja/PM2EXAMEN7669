@@ -5,7 +5,7 @@ using Microsoft.Maui.Controls;
 
 namespace PM2EXAMEN7669.Controllers
 {
-    public class base64Image : IValueConverter
+    public class base64Img : IValueConverter
     {
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {

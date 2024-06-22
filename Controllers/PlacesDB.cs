@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 using SQLite;
 namespace PM2EXAMEN7669.Controllers
 {
-    public class DBSitioMaps
+    public class PlacesDB
     {
         SQLiteAsyncConnection _connection;
 
-        public DBSitioMaps() { }
+        public PlacesDB() { }
 
         public async Task Init()
         {
@@ -28,7 +28,7 @@ namespace PM2EXAMEN7669.Controllers
                     }
 
                     _connection = new SQLiteAsyncConnection(Path.Combine(FileSystem.AppDataDirectory, "DBSitioMaps"), extensiones);
-                    var creacion = await _connection.CreateTableAsync<Models.SitioMaps>();
+                    var creacion = await _connection.CreateTableAsync<Models.PlaceMaps>();
                 }
             }
             catch (Exception ex)
@@ -37,8 +37,8 @@ namespace PM2EXAMEN7669.Controllers
             }
         }
 
-        //Crear metodos crud para la clase de sitio
-        public async Task<int> InsertMapaSitio(Models.SitioMaps sitiomaps)
+      
+        public async Task<int> InsertMapaSitio(Models.PlaceMaps sitiomaps)
         {
             await Init();
             if (sitiomaps.Id == 0)
@@ -51,31 +51,28 @@ namespace PM2EXAMEN7669.Controllers
             }
         }
 
-        //Update
-
-        //Acutalizaciones
-        //funciona
-        public async Task<int> updateSitios(Models.SitioMaps sitiomaps)
+       
+        public async Task<int> updateSitios(Models.PlaceMaps sitiomaps)
         {
             await Init();
             return await _connection.UpdateAsync(sitiomaps);
         }
 
-        //Read
-        public async Task<List<Models.SitioMaps>> getListSitio()
+        
+        public async Task<List<Models.PlaceMaps>> getListSitio()
         {
             await Init();
-            return await _connection.Table<SitioMaps>().ToListAsync();
+            return await _connection.Table<PlaceMaps>().ToListAsync();
         }
 
-        //Read Element
-        public async Task<Models.SitioMaps> getsitioMaps(int pid)
+        
+        public async Task<Models.PlaceMaps> getsitioMaps(int pid)
         {
             await Init();
-            return await _connection.Table<SitioMaps>().Where(i => i.Id == pid).FirstOrDefaultAsync();
+            return await _connection.Table<PlaceMaps>().Where(i => i.Id == pid).FirstOrDefaultAsync();
         }
 
-        //Delete
+        
         public async Task<int> deleteSitio(int sitioMapsID)
         {
             await Init();

@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace PM2EXAMEN7669.Views
 {
-    public partial class verMapa : ContentPage
+    public partial class ShowMap : ContentPage
     {
-        private Models.SitioMaps SelectedSitio { get; }
+        private Models.PlaceMaps SelectedSitio { get; }
         private Location userLocation;
 
-        public verMapa(Models.SitioMaps selectedSitio)
+        public ShowMap(Models.PlaceMaps selectedSitio)
         {
             InitializeComponent();
             SelectedSitio = selectedSitio;
-            this.Appearing += VerMapa_Appearing;
+            this.Appearing += ShowMap_Appearing;
             labelSitio.GestureRecognizers.Add(new TapGestureRecognizer
             {
                 Command = new Command(() => OpenGoogleMapsForDirections(SelectedSitio.latitud, SelectedSitio.longitud))
             });
         }
 
-        private async void VerMapa_Appearing(object sender, EventArgs e)
+        private async void ShowMap_Appearing(object sender, EventArgs e)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace PM2EXAMEN7669.Views
             }
             finally
             {
-                this.Appearing -= VerMapa_Appearing; // Asegura que no se llame múltiples veces
+                this.Appearing -= ShowMap_Appearing; // Asegura que no se llame múltiples veces
             }
         }
 

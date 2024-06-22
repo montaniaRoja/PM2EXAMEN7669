@@ -81,19 +81,34 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\editSitio.xaml">
+	  <Compile Update="Views\EditPlace.xaml.cs">
+	    <DependentUpon>EditPlace.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\PlacesList.xaml.cs">
+	    <DependentUpon>PlacesList.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ShowMap.xaml.cs">
+	    <DependentUpon>ShowMap.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ShowPicture.xaml.cs">
+	    <DependentUpon>ShowPicture.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\EditPlace.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\listaSitios.xaml">
+	  <MauiXaml Update="Views\PlacesList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MainPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\verFoto.xaml">
+	  <MauiXaml Update="Views\ShowPicture.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\verMapa.xaml">
+	  <MauiXaml Update="Views\ShowMap.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:avatarview="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
              xmlns:convert="clr-namespace:PM2EXAMEN7669.Controllers"
-             x:Class="PM2EXAMEN7669.Views.listaSitios"
+             x:Class="PM2EXAMEN7669.Views.PlacesList"
              Title=""
              BackgroundColor="Black">
 
     <ContentPage.Resources>
-        <convert:base64Image x:Key="BaseArray" />
+        <convert:base64Img x:Key="BaseArray" />
     </ContentPage.Resources>
 
     <Grid>

@@ -1,12 +1,12 @@
 using PM2EXAMEN7669.Extensions;
 namespace PM2EXAMEN7669.Views;
 
-public partial class editSitio : ContentPage
+public partial class EditPlace : ContentPage
 {
-    private Models.SitioMaps SelectedSitio { get; }
-    private Models.SitioMaps editedSitio;
+    private Models.PlaceMaps SelectedSitio { get; }
+    private Models.PlaceMaps editedSitio;
 
-    public editSitio(Models.SitioMaps selectedSitio)
+    public EditPlace(Models.PlaceMaps selectedSitio)
     {
         InitializeComponent();
         SelectedSitio = selectedSitio;
@@ -19,7 +19,7 @@ public partial class editSitio : ContentPage
         editedSitio.descripcion = entryDescripcion.Text;
 
         // Call the update method with the editedSitio object
-        await App.DBSitioMapsController.updateSitios(editedSitio);
+        await App.PlacesDBController.updateSitios(editedSitio);
 
         // Display an alert or navigate back
         await DisplayAlert("Sitio Actualizado!", "La información del sitio ha sido actualizada!", "OK");

@@ -6,11 +6,11 @@ using Xamarin.Essentials;
 
 namespace PM2EXAMEN7669.Views
 {
-    public partial class verFoto : ContentPage
+    public partial class ShowPicture : ContentPage
     {
-        private Models.SitioMaps SelectedSitio { get; }
+        private Models.PlaceMaps SelectedSitio { get; }
 
-        public verFoto(Models.SitioMaps selectedSitio)
+        public ShowPicture(Models.PlaceMaps selectedSitio)
         {
             InitializeComponent();
             SelectedSitio = selectedSitio;

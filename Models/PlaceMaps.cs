@@ -9,8 +9,8 @@ using SQLite;
 
 namespace PM2EXAMEN7669.Models
 {
-    [SQLite.Table("SitioMaps")]
-public class SitioMaps
+    [SQLite.Table("PlaceMaps")]
+public class PlaceMaps
 {
     [PrimaryKey, AutoIncrement]
     public int Id { get; set; }
